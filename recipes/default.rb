@@ -32,12 +32,6 @@ when "rhel"
   end
 end
 
-%w{git python-unittest2 python-nose python-httplib2 python-paramiko python-testtools python-novaclient python-glanceclient testrepository python-testresources}.each do |pkg|
-  package pkg do
-    action :install
-  end
-end
-
 ks_admin_endpoint = get_access_endpoint("keystone-api", "keystone", "admin-api")
 ks_service_endpoint = get_access_endpoint("keystone-api", "keystone", "service-api")
 keystone = get_settings_by_role("keystone-setup", "keystone")
